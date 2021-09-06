@@ -23,3 +23,19 @@ func (s *MySet) merge(x, y int){
 	xx, yy := s.find(x), s.find(y)
 	s.data[xx] = yy
 }
+
+// Heap int
+
+type MyHeapInt struct {
+	sort.IntSlice
+}
+
+func (h *hp) Push(v interface{}) {
+	h.IntSlice = append(h.IntSlice, v.(int))
+}
+
+func (h *hp) Pop() interface{} {
+	v := h.IntSlice[h.Len()-1]
+	h.IntSlice = h.IntSlice[:h.Len()-1]
+	return v
+}
