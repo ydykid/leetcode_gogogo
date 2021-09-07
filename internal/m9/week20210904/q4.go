@@ -49,8 +49,10 @@ func numberOfGoodSubsets(nums []int) int {
 	for _, pi := range nums {
 		if pi == 1 {
 			c = (c << 1) % p
+			// c = modMul(c, 2, p)
 		}
 	}
+	fmt.Println("c:", c)
 	ans := 0
 	for i := 1; i < 1024; i++ {
 		// ans = (ans + dp[n][i]) % p
@@ -131,6 +133,14 @@ func numberOfGoodSubsets(nums []int) int {
 	// }
 	// // c = (1+c)*c/2+1
 	// return (c*ans)%p
+}
+
+func modMul(x, y, p int)(ans int){
+	for ;y>0; y>>=1{
+		ans = (ans+y&1*x)%p
+		x <<= 1
+	}
+	return
 }
 
 func Test() {
