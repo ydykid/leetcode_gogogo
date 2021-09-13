@@ -10,6 +10,13 @@ func max(x, y int)int {
 	return y
 }
 
+func sq(x int)int{
+	return x*x
+}
+
+func dist(x []int, y []int)int{
+	return sq(x[0]-y[0])+sq(x[1]-y[1])
+}
 // Union Set
 type MySet struct{data []int}
 func (s *MySet) find(x int)int{
