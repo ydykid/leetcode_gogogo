@@ -14,5 +14,6 @@ func Test() {
 	RandInit()
 	for i := 0; i < 20; i++ {
 		fmt.Println(i, rand.Intn(10))
+		fmt.Println(i, rand.Intn(10)+1)
 	}
 }
